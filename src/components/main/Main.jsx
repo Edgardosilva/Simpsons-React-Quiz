@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ModalLoggin from "./modalLoggin/ModalLoggin";
+import ModalLoggin from "../modalLoggin/ModalLoggin";
 
 
 const Main = () => {
@@ -22,7 +22,7 @@ const Main = () => {
         />
         <img src="/public/images/tvSimpsons.png" alt="tvSimpsons" />
       </div>
-      <button className="startBtn" onClick={setTrueModal}>Start</button>
+      <button className="logginBtn" onClick={setTrueModal}>Loggin</button>
     </>
   );
 };
