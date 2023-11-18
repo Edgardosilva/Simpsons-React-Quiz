@@ -61,7 +61,7 @@ export const preguntas = [
     opciones: [
       "Padre de Familia",
       "El Show de Krusty",
-      "The Itchy & Scratchy Show",
+      "Tom y Daly",
       "Bob Esponja",
     ],
   },

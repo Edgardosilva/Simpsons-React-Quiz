@@ -1,6 +1,7 @@
 import React from "react";
 import './modal.css'
 
+
 const ModalLoggin = ({ isModalOpen, setIsModalOpen }) => {
 
   const setFalseModal = () => {

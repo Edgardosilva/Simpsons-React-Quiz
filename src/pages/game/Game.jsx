@@ -2,6 +2,8 @@ import React from "react";
 import './game.css'
 import { preguntas } from './questions.js'
 import { useState } from "react";
+import ScoreModal from "../scores/ScoreModal.jsx";
+
 
 const Game = () => {
 
@@ -20,18 +22,20 @@ const Game = () => {
   return (
     <section className="gameLayout">
       <div className="questionNumber">
-        PREGUNTA 1
+        {"PREGUNTA " + (currentQuestion + 1) + "/" + preguntas.length}
       </div>
       <div className="Question">
         {preguntas[currentQuestion].pregunta}
       </div>
       <div className="ulDiv">
         <ul>
-          {preguntas[currentQuestion].opciones.map((opcion, index) => 
-            <li key={index} onClick={() => handleAnswer(opcion)}>
-              {opcion}
-            </li>
-          )}
+          {
+            preguntas[currentQuestion].opciones.map((opcion, index) => (
+              <li key={index} onClick={() => handleAnswer(opcion)}>
+                {opcion}
+              </li>
+            ))
+          }
         </ul>
       </div>
     </section>
