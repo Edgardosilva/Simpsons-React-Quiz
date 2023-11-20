@@ -16,23 +16,24 @@
     width: 100%;
     height: 100vh;
     transition: 0.3s ease;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.8);
+    background: url('/public/images/simpsonsBackground.jpg');
+    background-size: cover;
 }
 
 .scoreModal {
     position: relative;
-    background: url('/public/images/simpsonsBackground.jpg');
     display: flex;
     flex-direction: column;
     align-items: end;
     border-radius: 20px;
     padding: 2rem;
     text-align:right;
-    background-color: bisque;
     width: 800px;
     height: 500px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.356);
 }
+
 
 .imgHomer {
     position: absolute;
