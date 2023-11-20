@@ -1,10 +1,19 @@
-.gameLayout {
+.gameSection {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(5px);
     font-size: 3rem;
     width: 700px;
     height: 500px;
+}
+
+.gameLayout {
+    background: url('/public/images/simpsonsBackground.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .questionNumber {

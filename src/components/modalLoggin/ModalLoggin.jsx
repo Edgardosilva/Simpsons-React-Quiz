@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import './modal.css'
+import { googleProvider, auth } from "../../../firebase-config";
+import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { Navigate } from "react-router-dom";
 
-
-const ModalLoggin = ({ isModalOpen, setIsModalOpen }) => {
+const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
 
   const setFalseModal = () => {
     setIsModalOpen(!isModalOpen)
   }
+
+  const googleAuth = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider)
+      console.log('Logueado con Google')
+      setUser(auth.currentUser)
+      setIsModalOpen(!isModalOpen)
+      // return <Navigate to="/game" />
+    } catch (error) {
+      console.log(error); 
+    }
+  }
+
 
   return (
     <section className="modalLayout">
@@ -21,7 +36,7 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen }) => {
               alt="googleIcon"
               className="googleIcon"
             />
-            <div className="btnRightSide">Sing up with Google</div>
+            <div className="btnRightSide" onClick={googleAuth}>Sing up with Google</div>
           </div>
         </div>
       </div>
