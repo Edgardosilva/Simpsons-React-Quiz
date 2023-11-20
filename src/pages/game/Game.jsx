@@ -1,24 +1,35 @@
 import React, { useEffect } from "react";
 import './game.css'
+import { collection, addDoc, updateDoc } from "firebase/firestore";
 import { preguntas } from './questions.js'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { db } from "../../../firebase-config";
+import { auth } from "../../../firebase-config";
 
 const Game = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const navigate = useNavigate()
+  const scoresCollectionRef = collection(db, "scores");
   
   const handleAnswer = (selectAnswer) => {
       if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta ) {
         setScore(score + 1);
       } else if (currentQuestion === preguntas.length - 1){
-        navigate('/gameOverModal')
+        addDocument()
         console.log(score)
+        navigate('/scoreModal')
       }
       setCurrentQuestion(currentQuestion + 1)
+  }
+
+  const addDocument = async () => {
+    await addDoc(scoresCollectionRef, {
+      score: score,
+      user: auth?.currentUser?.displayName,
+    })
   }
     
   return (

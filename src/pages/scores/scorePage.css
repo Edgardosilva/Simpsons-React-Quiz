@@ -1,0 +1,47 @@
+.scoreLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('/public/images/simpsonsBackground.jpg');
+    font-size: 35px;
+    padding: 5px;
+    color: black;
+    font-family: 'Homer Simpson Revised', sans-serif;  
+}
+
+.scoreTitle {
+    color: yellow;
+    font-weight: bold;
+    font-family: 'Homer Simpson Revised', sans-serif;  
+    margin-bottom: 2rem;
+}
+
+table {
+    border-collapse: collapse;
+    width: 600px;
+    margin-bottom: 20px;
+    font-size: 35px; 
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2; 
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+
+  tr:hover {
+    background-color: #e5e5e5;
+  }
+
+
+  

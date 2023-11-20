@@ -1,10 +1,13 @@
 import React from "react";
 import './scoreModal.css';
+import { useNavigate } from "react-router-dom";
 
 const ScoreModal = () => {
 
+  const navigate = useNavigate()
+
   const handleScores = () => {
-    console.log('hola')
+    navigate('/scorePage')
   }
 
   return (
@@ -12,7 +15,7 @@ const ScoreModal = () => {
       <div className="scoreModal">
         <h4 className="title">Game over! Press the button to see the scores!</h4>
         <img src="./public/images/homer.png" alt="homer" className="imgHomer"/>
-        <button className="bntScores">Scores</button>
+        <button className="bntScores" onClick={handleScores}>Scores</button>
       </div>
     </section>
   );
