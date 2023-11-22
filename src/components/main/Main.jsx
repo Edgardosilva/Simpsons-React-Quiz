@@ -3,6 +3,7 @@ import ModalLoggin from "../modalLoggin/ModalLoggin";
 import { auth } from "../../../firebase-config";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import Loader from "../loader/Loader";
 
 
 const Main = () => {
@@ -19,6 +20,10 @@ const Main = () => {
     navigate('/game')
   }
 
+  const showPlayers = () => {
+    navigate('/scorePage')
+  }
+
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -32,7 +37,7 @@ const Main = () => {
 
   return (
     <>
-      {isModalOpen && (
+      {/* {isModalOpen && (
         <ModalLoggin
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
@@ -52,15 +57,17 @@ const Main = () => {
         <div>
           <p className="welcomeUserText">Welcome, {user.displayName}!</p>
           <div className="btnDiv">
-            <button onClick={goToGame} className="startBtn">Start</button>
-            <button onClick={handleSignOut} className="logOutBtn">Log out</button>
+            <button onClick={goToGame} className="btn">Start</button>
+            <button onClick={handleSignOut} className="btn">Log out</button>
           </div>
         </div>
       ) : (
         <div className="btnDiv">
-          <button onClick={setTrueModal} className="logginBtn">Sign in</button>
+          <button onClick={setTrueModal} className="btn">Sign in</button>
+          <button onClick={showPlayers} className="btn">Top players</button>
         </div>
-      )}
+      )} */}
+      <Loader />
     </>
   );
 };

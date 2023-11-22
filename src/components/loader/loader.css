@@ -1,0 +1,9 @@
+.loaderDiv {
+    background: url(/public/images/simpsonsBackground.jpg);
+    background-size: cover;
+}
+
+.homerLoader {
+    width: 400px;
+    border-radius: 30%;
+}

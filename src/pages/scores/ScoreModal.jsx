@@ -15,7 +15,7 @@ const ScoreModal = () => {
       <div className="scoreModal">
         <h4 className="title">Game over! Press the button to see the scores!</h4>
         <img src="./public/images/homer.png" alt="homer" className="imgHomer"/>
-        <button className="bntScores" onClick={handleScores}>Scores</button>
+        <button className="btn" onClick={handleScores}>Scores</button>
       </div>
     </section>
   );
