@@ -1,9 +1,25 @@
-.loaderDiv {
-    background: url(/public/images/simpsonsBackground.jpg);
-    background-size: cover;
+.homerLoader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid yellow;
+    animation: homerLoader 1s linear infinite;
 }
 
-.homerLoader {
-    width: 400px;
-    border-radius: 30%;
+@keyframes homerLoader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loaderDiv {
+    background: url('/public/images/simpsonsBackground.jpg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }

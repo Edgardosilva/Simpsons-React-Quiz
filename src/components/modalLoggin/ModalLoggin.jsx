@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import './modal.css'
+import React from "react";
+import './modalLogin.css'
 import { googleProvider, auth } from "../../../firebase-config";
-import { signInWithPopup, onAuthStateChanged } from "firebase/auth";
-import { Navigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
+
 
 const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
 
@@ -16,7 +16,6 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
       console.log('Logueado con Google')
       setUser(auth.currentUser)
       setIsModalOpen(!isModalOpen)
-      // return <Navigate to="/game" />
     } catch (error) {
       console.log(error); 
     }

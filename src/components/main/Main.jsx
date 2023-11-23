@@ -3,7 +3,7 @@ import ModalLoggin from "../modalLoggin/ModalLoggin";
 import { auth } from "../../../firebase-config";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import Loader from "../loader/Loader";
+
 
 
 const Main = () => {
@@ -36,8 +36,8 @@ const Main = () => {
 
 
   return (
-    <>
-      {/* {isModalOpen && (
+    <main className="mainCompDiv">
+      {isModalOpen && (
         <ModalLoggin
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
@@ -51,7 +51,7 @@ const Main = () => {
           alt="jesusDancing"
           className="jesusDancing"
         />
-        <img src="/public/images/tvSimpsons.png" alt="tvSimpsons" />
+        <img src="/public/images/tvSimpsons.png" alt="tvSimpsons" className="tvPng"/>
       </div>
       {user? (
         <div>
@@ -66,9 +66,8 @@ const Main = () => {
           <button onClick={setTrueModal} className="btn">Sign in</button>
           <button onClick={showPlayers} className="btn">Top players</button>
         </div>
-      )} */}
-      <Loader />
-    </>
+      )}
+    </main>
   );
 };
 

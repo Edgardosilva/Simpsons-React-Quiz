@@ -4,7 +4,8 @@ import Home from './pages/home/Home'
 import Game from './pages/game/Game';
 import ScorePage from './pages/scores/ScorePage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ScoreModal from './pages/scores/ScoreModal';
+import ScoreModal from './components/scoreModal/ScoreModal'
+
 
 
 const router = createBrowserRouter([

@@ -3,8 +3,8 @@
     flex-direction: column;
     backdrop-filter: blur(5px);
     font-size: 3rem;
-    width: 700px;
     height: 500px;
+    width: 700px;
 }
 
 .gameLayout {
@@ -67,4 +67,36 @@ ul li:hover {
     cursor: pointer;
     background-color:beige;
 }
+
+@media (max-width: 800px) {
+
+    .gameSection {
+        width: 500px;
+        height: 800px;
+    }
+
+    .ulDiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 585px) {
+    .gameSection {
+        width: 100%;
+        height: 100vh;
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
 

@@ -10,8 +10,9 @@ import Loader from "../../components/loader/Loader";
 const ScorePage = () => {
 
   const [scoreList, setScoreList] = useState([]);
-  const scoreColllectionRef = collection(db, 'scores')
   const [loading, setLoading] = useState(true)
+  const scoreColllectionRef = collection(db, 'scores')
+  const scoresLimitados = scoreList.slice(0, 10);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const ScorePage = () => {
           </tr>
         </thead>
         <tbody>
-          {scoreList.map((score) => (
+          {scoresLimitados.map((score) => (
             <tr key={score.id}>
               <td>{score.user}</td>
               <td>{score.score}/{preguntas.length}</td>
