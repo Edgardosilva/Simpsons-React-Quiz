@@ -12,7 +12,7 @@ const ScorePage = () => {
   const [scoreList, setScoreList] = useState([]);
   const [loading, setLoading] = useState(true)
   const scoreColllectionRef = collection(db, 'scores')
-  const scoresLimitados = scoreList.slice(0, 10);
+  const scoresLimitados = scoreList.sort((a, b) => b.score - a.score);
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -58,22 +58,21 @@ const ScorePage = () => {
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th className="name">Name</th>
             <th>Score</th>
           </tr>
         </thead>
         <tbody>
           {scoresLimitados.map((score) => (
             <tr key={score.id}>
-              <td>{score.user}</td>
-              <td>{score.score}/{preguntas.length}</td>
+              <td className={score.user === auth?.currentUser?.displayName? 'myScore' : ''}>{score.user}</td>
+              <td className={score.user === auth?.currentUser?.displayName? 'myScore' : ''}>{score.score}/{preguntas.length}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      {auth?.currentUser?.displayName && <button className="btn" onClick={goToGame}>Try again</button>}
       {auth?.currentUser?.displayName
-        ?<button className="btn" onClick={handleSignOut}>Logout</button>
+        ?<button className="btn" onClick={handleSignOut}>Home</button>
         :<button className="btn" onClick={goToHome}>Back</button>
       }
     </div>

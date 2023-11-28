@@ -47,11 +47,11 @@ const Main = () => {
       <h1 className="mainTitle">The Simpsons Quiz</h1>
       <div className="tvSimpsons">
         <img
-          src="/public/images/jesusGif.gif"
+          src="/images/jesusGif.gif"
           alt="jesusDancing"
           className="jesusDancing"
         />
-        <img src="/public/images/tvSimpsons.png" alt="tvSimpsons" className="tvPng"/>
+        <img src="/images/tvSimpsons.png" alt="tvSimpsons" className="tvPng"/>
       </div>
       {user? (
         <div>

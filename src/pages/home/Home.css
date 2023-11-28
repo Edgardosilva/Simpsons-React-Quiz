@@ -22,6 +22,7 @@
   justify-content: center;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 .btn {
@@ -53,6 +54,8 @@
   font-size: 3rem;
   font-family: 'Homer Simpson Revised', sans-serif;  
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 .logginBtn:hover {
@@ -62,7 +65,7 @@
 
 .tvSimpsons {
   position: relative;
-  margin-bottom: 2rem;
+  
   z-index: 1;
 }
 
@@ -124,14 +127,41 @@
   }
 
   .tvPng {
-    width: 400px;
+    width: 300px;
   }
 
   .jesusDancing {
-    max-width: 380px;
+    max-width: 280px;
     left: 50%;
   }
 }
+
+
+@media (max-width: 448px) {
+
+  .tvPng {
+    width: 300px;
+  }
+
+  .jesusDancing {
+    max-width: 280px;
+    left: 50%;
+  }
+
+  .btnDiv {
+    margin-top: 0;
+  }
+
+  .welcomeUserText {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .mainTitle {
+    font-size: 5rem;
+  }
+}
+
 
 
 

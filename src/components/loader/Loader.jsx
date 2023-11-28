@@ -4,7 +4,7 @@ import './loader.css'
 const Loader = () => {
   return (
     <div className="loaderDiv">
-      <img src="/public/images/circleHomer.jpg" alt="loader" className="homerLoader"/>
+      <img src="/images/circleHomer.jpg" alt="loader" className="homerLoader"/>
     </div>
   )
 };

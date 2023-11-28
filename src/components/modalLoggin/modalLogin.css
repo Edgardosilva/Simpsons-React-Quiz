@@ -136,6 +136,27 @@ main {
 }
 
 
+@media screen and (max-width: 450px) {
+    
+    .modal {
+        width: 90%;
+        height: 350px;
+    }
+
+    .btnRightSide {
+        display: none;
+    }
+
+    .closeButton {
+        top: 5px;
+        right: 5px;
+        font-size: 20PX;
+        width: 30px;
+    }
+}
+
+
+
 
 
 

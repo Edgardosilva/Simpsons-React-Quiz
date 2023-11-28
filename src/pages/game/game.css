@@ -93,9 +93,37 @@ ul li:hover {
 @media (max-width: 585px) {
     .gameSection {
         width: 100%;
-        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 1rem;
         padding: 1rem;
+    }
+
+    ul li {
+        font-size: 1.6rem;
+        margin: 10px;
+        padding: 15px;
+        width: 350px;
+        color: black
+    }
+
+    .Question {
+        display: flex;
+        font-size: 50px;
+        background-color: rgba(247, 247, 179, 0.719);
+        text-align: center;
+    }
+
+    .gameLayout {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;   
+    }
+
+    .ulDiv {
+        width: 100%;
     }
 }
 

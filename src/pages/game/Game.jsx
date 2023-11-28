@@ -11,9 +11,11 @@ const Game = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
+  const [userAnswersArray, setUserAnswersArray] = useState([])
   const navigate = useNavigate()
   const scoresCollectionRef = collection(db, "scores");
-  
+  const userAnswer = [];
+
   const handleAnswer = (selectAnswer) => {
       if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta ) {
         setScore(score + 1);
@@ -23,12 +25,15 @@ const Game = () => {
         navigate('/scoreModal')
       }
       setCurrentQuestion(currentQuestion + 1)
+      userAnswer.push(selectAnswer)
+      setUserAnswersArray(userAnswersArray.concat(userAnswer))
   }
 
   const addDocument = async () => {
     await addDoc(scoresCollectionRef, {
       score: score,
       user: auth?.currentUser?.displayName,
+      userAnswers: userAnswersArray,
     })
   }
     

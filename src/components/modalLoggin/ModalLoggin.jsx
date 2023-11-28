@@ -1,7 +1,7 @@
 import React from "react";
 import './modalLogin.css'
 import { googleProvider, auth } from "../../../firebase-config";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, signInWithRedirect } from "firebase/auth";
 
 
 const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
@@ -13,12 +13,16 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
   const googleAuth = async () => {
     try {
       await signInWithPopup(auth, googleProvider)
-      console.log('Logueado con Google')
+      console.log(auth.currentUser)
       setUser(auth.currentUser)
       setIsModalOpen(!isModalOpen)
     } catch (error) {
       console.log(error); 
     }
+  }
+
+  const googleAuthMobile = async () => {
+    
   }
 
 
@@ -29,13 +33,13 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
         <div className="rightDiv">
           <button className="closeButton" onClick={setFalseModal}>X</button>
           <h4>Sign in with your Google account!</h4>
-          <div className="divButton">
+          <div className="divButton" onClick={googleAuth}>
             <img
-              src="/src/assets/googleLogo.png"
+              src="/images/googleLogo.png"
               alt="googleIcon"
               className="googleIcon"
             />
-            <div className="btnRightSide" onClick={googleAuth}>Sing up with Google</div>
+            <div className="btnRightSide">Sing up with Google</div>
           </div>
         </div>
       </div>

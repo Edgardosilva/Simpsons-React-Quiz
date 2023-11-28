@@ -22,9 +22,12 @@
 
 table {
     border-collapse: collapse;
-    width: 600px;
     margin-bottom: 20px;
     font-size: 35px; 
+    max-height: 485px;
+    overflow-y: scroll;
+    display: block;
+    width: auto;
   }
   
   th, td {
@@ -43,11 +46,27 @@ table {
     backdrop-filter: blur(5px);
   }
 
-  @media (max-width: 610px) {
-    table {
-      width: 100%;
-    }
+  .name {
+    width: 500px
   }
+
+  .myScore {
+    background-color: rgba(255, 255, 0, 0.158);
+    backdrop-filter: blur(5px);
+  }
+  
+@media (max-width: 448px) {
+  table {
+    font-size: 25px;
+  }
+
+  .name {
+    width: 300px
+  }
+}
+
+
+
 
 
 
