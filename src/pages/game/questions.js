@@ -30,14 +30,9 @@ export const preguntas = [
     opciones: ["Ned", "Nedward Flanders", "Nedson Flanders", "Flan Ned"],
   },
   {
-    pregunta: "¿Quién es el dueño del Kwik-E-Mart?",
-    respuestaCorrecta: "Apu Nahasapeemapetilon",
-    opciones: [
-      "Moe Szyslak",
-      "Barney Gumble",
-      "Apu Nahasapeemapetilon",
-      "Lenny Leonard",
-    ],
+    pregunta: "¿Cuál es el segundo apellido de Marge Simpson ?",
+    respuestaCorrecta: "Bouvier",
+    opciones: ["Smith", "Bouvier", "Johnson", "Thompson"],
   },
   {
     pregunta:
@@ -56,35 +51,19 @@ export const preguntas = [
     opciones: ["Patty", "Selma", "Maggie", "Lisa"],
   },
   {
-    pregunta: "¿Cómo se llama el programa de televisión favorito de Bart?",
-    respuestaCorrecta: "El Show de Krusty",
-    opciones: [
-      "Padre de Familia",
-      "El Show de Krusty",
-      "Tom y Daly",
-      "Bob Esponja",
-    ],
+    pregunta: "¿En qué estado de EE. UU. se encuentra Springfield?",
+    respuestaCorrecta: "Nunca se revela",
+    opciones: ["Oregón", "Illinois", "Nunca se revela", "California"],
   },
   {
-    pregunta: "¿Cuál es el nombre de la banda de Homer Simpson?",
-    respuestaCorrecta: "Los Borbotones",
-    opciones: [
-      "Los Descarriados",
-      "Los Borbotones",
-      "Los Barbotones",
-      "Los Rudos del Rock",
-    ],
+    pregunta: "¿Cuántos dedos tienen en cada mano los personajes de la serie?",
+    respuestaCorrecta: "Cuatro",
+    opciones: ["Cuatro", "Cinco", "Tres", "Dos"],
   },
   {
-    pregunta:
-      "¿Cómo se llama el jefe de Bart en la planta de energía nuclear cuando trabaja medio tiempo?",
-    respuestaCorrecta: "Jimbo Jones",
-    opciones: [
-      "Jimbo Jones",
-      "Nelson Muntz",
-      "Dolph Starbeam",
-      "Kearney Zzyzwicz",
-    ],
+    pregunta: "¿Qué significa IVAN EHT NIOJ?",
+    respuestaCorrecta: "Enlistate",
+    opciones: ["Enlistate", "Recuestate", "Sumergete", "Alistate"],
   },
   {
     pregunta: "¿Cuál es el nombre del perro de la familia Simpson?",
@@ -92,14 +71,10 @@ export const preguntas = [
     opciones: ["Rin Tin Tin", "Huesos", "Ayudante de Santa", "Bola de Nieve"],
   },
   {
-    pregunta: "¿Cómo se llama el robot que corrige la forma de hablar creado por Lisa?",
+    pregunta:
+      "¿Cómo se llama el robot que corrige la forma de hablar creado por Lisa?",
     respuestaCorrecta: "Linguo",
-    opciones: [
-      "Jimbo",
-      "Linguo",
-      "Limbo",
-      "Languo",
-    ],
+    opciones: ["Jimbo", "Linguo", "Limbo", "Languo"],
   },
   {
     pregunta: "Termina la cancion: Probando mi amor por ti, probandome ...",
@@ -108,31 +83,23 @@ export const preguntas = [
   },
   {
     pregunta:
-      "¿Cuál es el nombre del actor que dobla la voz de Homero en la versión original en inglés?",
-    respuestaCorrecta: "Dan Castellaneta",
+      "En el episodio 'Homero y Apu', ¿qué vende Apu en la tienda Kwik-E-Mart que causa problemas?",
+    respuestaCorrecta: "Carne podrida",
     opciones: [
-      "Harry Shearer",
-      "Dan Castellaneta",
-      "Hank Azaria",
-      "Yeardley Smith",
+      "Carne podrida",
+      "Cigarros falsos",
+      "Refrescos caducados",
+      "Prensa de tabloides",
     ],
   },
   {
-    pregunta: "¿Cómo se llama la ciudad vecina de Springfield?",
-    respuestaCorrecta: "Shelbyville",
-    opciones: ["Shelbyville", "Capital City", "Ogdenville", "North Haverbrook"],
+    pregunta: "Todos amamos a Krol y a su glorioso regimen, con amor...",
+    respuestaCorrecta: "Niñita",
+    opciones: ["Hijo mio", "Querido hijo", "Niñita", "Tu padre"],
   },
   {
-    pregunta:
-      "Termina la frase: No lloren por mi, yo ya ...",
+    pregunta: "Termina la frase: No lloren por mi, yo ya ...",
     respuestaCorrecta: "Estoy muerto",
-    opciones: [
-      "Estoy muerto",
-      "Morí",
-      "Me fuí",
-      "Aprendí",
-    ],
+    opciones: ["Estoy muerto", "Morí", "Me fuí", "Aprendí"],
   },
 ];
-
-

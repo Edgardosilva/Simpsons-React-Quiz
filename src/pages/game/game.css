@@ -101,10 +101,10 @@ ul li:hover {
     }
 
     ul li {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         margin: 10px;
         padding: 15px;
-        width: 350px;
+        width: 300px;
         color: black
     }
 
@@ -126,5 +126,27 @@ ul li:hover {
         width: 100%;
     }
 }
+
+
+@media (max-width: 430px) {
+    .gameSection {
+        height: 600px;
+    }
+
+    .Question {
+        font-size: 40px;
+    }
+
+    ul li {
+        font-size: 1.3rem;
+        margin: 8px;
+        padding: 10px;
+        width: 300px;
+        color: black
+    }
+}
+
+
+
 
 
