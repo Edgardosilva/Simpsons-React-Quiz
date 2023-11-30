@@ -56,7 +56,7 @@ const Main = () => {
       </div>
       {user? (
         <div>
-          <p className="welcomeUserText">Welcome, {user.displayName}!</p>
+          <p className="welcomeUserText">Welcome, {user}!</p>
           <div className="btnDiv">
             <button onClick={goToGame} className="btn">Start</button>
             <button onClick={handleSignOut} className="btn">Log out</button>

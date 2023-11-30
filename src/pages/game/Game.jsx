@@ -49,16 +49,20 @@ const Game = () => {
   const handleAnswer = async (selectAnswer) => {
     console.log("currentQuestion:", currentQuestion);
     console.log("preguntas.length:", preguntas.length);
-      if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta ) {
-        setScore(score + 1);
-      } else if (currentQuestion === preguntas.length - 1){
-        addDocument()
-        navigate('/scoreModal')
-      }
-      setCurrentQuestion(currentQuestion + 1)
-      userAnswer.push(selectAnswer)
-      setUserAnswersArray(userAnswersArray.concat(userAnswer))
-  }
+  
+    if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta) {
+      setScore(score + 1);
+    }
+    userAnswer.push(selectAnswer);
+    setUserAnswersArray(userAnswersArray.concat(userAnswer));
+    if (currentQuestion === 15) { 
+      addDocument();
+      navigate('/scoreModal');
+    } else {
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  };
+  
 
   
   const addDocument = async () => {
