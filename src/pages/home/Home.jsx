@@ -7,8 +7,8 @@ function App() {
   return (
     <main>
       <section className='layout'>
-        {/* <Main /> */}
-        <AnswerReview />
+        <Main />
+        {/* <AnswerReview /> */}
       </section>
     </main>
   )

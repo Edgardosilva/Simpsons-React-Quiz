@@ -1,3 +1,8 @@
-.correctAnswer {
+.correct {
     background-color: lightgreen;
 }
+
+.incorrect {
+    background-color: lightcoral;
+}
+

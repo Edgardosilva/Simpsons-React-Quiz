@@ -37,8 +37,8 @@ const ScorePage = () => {
     navigate('/')
   }
 
-  const goToGame = () => {
-    navigate('/game')
+  const goReview = () => {
+    navigate('/answerReview')
   }
 
   const handleSignOut = async () => {
@@ -75,6 +75,7 @@ const ScorePage = () => {
         ?<button className="btn" onClick={handleSignOut}>Home</button>
         :<button className="btn" onClick={goToHome}>Back</button>
       }
+      {auth?.currentUser?.uid && <button className="btn" onClick={goReview}>Review</button>}
     </div>
   
   );

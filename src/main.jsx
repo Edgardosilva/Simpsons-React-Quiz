@@ -5,6 +5,7 @@ import Game from './pages/game/Game';
 import ScorePage from './pages/scores/ScorePage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ScoreModal from './components/scoreModal/ScoreModal'
+import AnswerReview from './pages/answerReview/AnswerReview';
 
 
 
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/scorePage',
     element: <ScorePage />
+  },
+  {
+    path: '/answerReview',
+    element: <AnswerReview />
   }
 ]);
 

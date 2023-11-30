@@ -11,7 +11,7 @@ export const preguntas = [
   },
   {
     pregunta: "¿Cuál es el nombre del bar de Moe?",
-    respuestaCorrecta: "Taberna de Moe",
+    respuestaCorrecta: "Moe's",
     opciones: ["Bar de Moe", "Moe's Tavern", "Moe's", "Cervecería de Moe"],
   },
   {
@@ -125,7 +125,7 @@ export const preguntas = [
   {
     pregunta:
       "Termina la frase: No lloren por mi, yo ya ...",
-    respuestaCorrecta: "Edna Krabappel",
+    respuestaCorrecta: "Estoy muerto",
     opciones: [
       "Estoy muerto",
       "Morí",
