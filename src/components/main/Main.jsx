@@ -28,6 +28,7 @@ const Main = () => {
     try {
       await signOut(auth);
       setUser(null)
+      localStorage.clear();
       navigate('/')
     } catch (error) {
       console.error('Error signing out:', error);

@@ -7,23 +7,27 @@ import { auth, db } from "../../../firebase-config";
 import { query, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/loader/Loader";
+import { signOut } from "firebase/auth";
+
 
 const AnswerReview = () => {
   const [loading, setLoading] = useState(true)
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userAnswers, setUserAnswers] = useState([])
   const [usAnswer, setUsAnswer] = useState('')
-  const scoresCollectionRef = collection(db, "scores");
+  const scoresCollectionRef = collection(db, "scores", );
   const navigate = useNavigate()
 
 
   useEffect(() => {
     const getScores = async () => {
       try {
-        const data = await getDocs(scoresCollectionRef)
+        const docId = JSON.parse(localStorage.getItem('docID'));
+        const data = await getDocs(query(scoresCollectionRef, where("id", "==", docId)))
         const userAns = data.docs.map((doc) => {
           return doc.data().userAnswers
         })
+        console.log(userAns)
         setUserAnswers(userAns)
       } catch (error) {
         console.error(error)
@@ -49,8 +53,19 @@ const AnswerReview = () => {
   };
 
   const goHome = () => {
+    handleSignOut()
     navigate('/')
+    window.location.reload();
   }
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate('/')
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
 
   return (
     loading ? <Loader /> :

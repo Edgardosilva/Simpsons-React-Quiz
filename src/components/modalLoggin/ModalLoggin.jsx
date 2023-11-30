@@ -2,14 +2,10 @@ import React from "react";
 import './modalLogin.css'
 import { googleProvider, auth } from "../../../firebase-config";
 import { signInWithPopup } from "firebase/auth";
-import { addDoc } from "firebase/firestore";
-import { collection } from "firebase/firestore";
-import { db } from "../../../firebase-config";
+
 
 
 const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
-
-  const scoresCollectionRef = collection(db, "users");
 
   const setFalseModal = () => {
     setIsModalOpen(!isModalOpen)
@@ -18,19 +14,11 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
   const googleAuth = async () => {
     try {
       await signInWithPopup(auth, googleProvider)
-      console.log(auth.currentUser)
-      setUser(auth.currentUser)
+      setUser(auth.currentUser.displayName)
       setIsModalOpen(!isModalOpen)
     } catch (error) {
       console.log(error); 
     }
-    addUser()
-  }
-
-  const addUser = async () => {
-    await addDoc(scoresCollectionRef, {
-      userName: auth?.currentUser?.displayName,
-    })
   }
 
 
