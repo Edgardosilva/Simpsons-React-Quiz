@@ -44,17 +44,17 @@ const Game = () => {
     getGameId();
   }, [docGamesIds, currentGameId]); 
 
+  
+  useEffect(() => {
+    setScore(score)
+    console.log(score)
+  }, [score])
 
 
   const handleAnswer = async (selectAnswer) => {
-    console.log("currentQuestion:", currentQuestion);
-    console.log("preguntas.length:", preguntas.length);
-  
-    if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta) {
-      setScore(score + 1);
-    }
-    userAnswer.push(selectAnswer);
-    setUserAnswersArray(userAnswersArray.concat(userAnswer));
+    selectAnswer === preguntas[currentQuestion].respuestaCorrecta? setScore(score + 1) : setScore(score);
+    const updatedUserAnswer = [...userAnswer, selectAnswer];
+    setUserAnswersArray(updatedUserAnswer);
     if (currentQuestion === 15) { 
       addDocument();
       navigate('/scoreModal');
