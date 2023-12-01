@@ -66,7 +66,7 @@ const ScorePage = () => {
           {scoresLimitados.map((score) => (
             <tr key={score.id}>
               <td className={score.user === auth?.currentUser?.displayName? 'myScore' : ''}>{score.user}</td>
-              <td className={score.user === auth?.currentUser?.displayName? 'myScore' : ''}>{score.score}/{preguntas.length}</td>
+              <td className={score.user === auth?.currentUser?.displayName? 'myScore' : ''}>{score.score + 1}/{preguntas.length}</td>
             </tr>
           ))}
         </tbody>

@@ -28,6 +28,7 @@ const Game = () => {
           return doc.data().id
         })
         setDocGamesIds(docGamesIds)
+        setScore(0)
       } catch (error) {
         console.error(error)
       }
@@ -44,15 +45,10 @@ const Game = () => {
     getGameId();
   }, [docGamesIds, currentGameId]); 
 
-  
-  useEffect(() => {
-    setScore(score)
-    console.log(score)
-  }, [score])
-
-
-  const handleAnswer = async (selectAnswer) => {
-    selectAnswer === preguntas[currentQuestion].respuestaCorrecta? setScore(score + 1) : setScore(score);
+  const handleAnswer = async (selectAnswer, index) => {
+    if (selectAnswer === preguntas[index].respuestaCorrecta) {
+      setScore(score + 1);
+    }
     const updatedUserAnswer = [...userAnswer, selectAnswer];
     setUserAnswersArray(updatedUserAnswer);
     if (currentQuestion === 15) { 
@@ -93,7 +89,7 @@ const Game = () => {
         <div className="ulDiv">
           <ul>
             {preguntas[currentQuestion].opciones.map((opcion, index) => (
-              <li key={index} onClick={() => handleAnswer(opcion)}>
+              <li key={index} onClick={() => handleAnswer(opcion, index)}>
                 {opcion}
               </li>
             ))}
