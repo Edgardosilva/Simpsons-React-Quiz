@@ -28,7 +28,6 @@ const Game = () => {
           return doc.data().id
         })
         setDocGamesIds(docGamesIds)
-        setScore(0)
       } catch (error) {
         console.error(error)
       }
@@ -45,28 +44,29 @@ const Game = () => {
     getGameId();
   }, [docGamesIds, currentGameId]); 
 
-  const handleAnswer = async (selectAnswer, index) => {
-    if (selectAnswer === preguntas[index].respuestaCorrecta) {
-      setScore(score + 1);
-    }
-    const updatedUserAnswer = [...userAnswer, selectAnswer];
-    setUserAnswersArray(updatedUserAnswer);
-    if (currentQuestion === 15) { 
-      addDocument();
+
+  const handleAnswer = async (selectAnswer) => {
+    const updatedUserAnswer = [...userAnswersArray, selectAnswer];
+    if (currentQuestion === 15) {
+      await addDocument(updatedUserAnswer);
       navigate('/scoreModal');
     } else {
       setCurrentQuestion(currentQuestion + 1);
+      setUserAnswersArray(updatedUserAnswer);
+    }
+    if (selectAnswer === preguntas[currentQuestion].respuestaCorrecta) {
+      setScore(score + 1);
     }
   };
   
 
   
-  const addDocument = async () => {
+  const addDocument = async (updatedUserAnswer) => {
     try {
       const nuevoDocumentoRef = await addDoc(scoresCollectionRef, {
         score: score,
         user: auth?.currentUser?.displayName,
-        userAnswers: userAnswersArray,
+        userAnswers: updatedUserAnswer,
       });
       const docID = nuevoDocumentoRef.id;
       await updateDoc(nuevoDocumentoRef, {
@@ -89,7 +89,7 @@ const Game = () => {
         <div className="ulDiv">
           <ul>
             {preguntas[currentQuestion].opciones.map((opcion, index) => (
-              <li key={index} onClick={() => handleAnswer(opcion, index)}>
+              <li key={index} onClick={() => handleAnswer(opcion)}>
                 {opcion}
               </li>
             ))}
