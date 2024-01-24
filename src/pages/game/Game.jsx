@@ -4,8 +4,8 @@ import { collection, addDoc, getDocs, updateDoc } from "firebase/firestore";
 import { preguntas } from './questions.js'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { db } from "../../../firebase-config";
-import { auth } from "../../../firebase-config";
+import { db } from "/firebase-config";
+import { auth } from "/firebase-config";
 
 
 const Game = () => {
