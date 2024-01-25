@@ -2,8 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+const API = process.env.API_KEY;
+
 const firebaseConfig = {
-    apiKey: process.env.API_KEY,
+    apiKey: API,
     authDomain: "simpsonsquiz-7b196.firebaseapp.com",
     projectId: "simpsonsquiz-7b196",
     storageBucket: "simpsonsquiz-7b196.appspot.com",
