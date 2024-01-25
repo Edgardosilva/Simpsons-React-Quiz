@@ -25,8 +25,7 @@ const ModalLoggin = ({ isModalOpen, setIsModalOpen, setUser }) => {
   return (
     <section className="modalLayout">
       <div className="modal">
-        <div className="leftDiv"></div>
-        <div className="rightDiv">
+          <div className="rightDiv">
           <button className="closeButton" onClick={setFalseModal}>X</button>
           <h4>Sign in with your Google account!</h4>
           <div className="divButton" onClick={googleAuth}>
